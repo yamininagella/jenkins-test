@@ -1,9 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage("xyz"){
+        stage("getUrl"){
             steps { 
-                echo geturl()
+                echo getUrl()
+            }
+        }
+        stage("getUrlName"){
+            steps { 
+                echo getUrlName()
             }
         }
     }
@@ -16,6 +21,11 @@ pipeline {
 }
 
 
-def geturl(){
+def getUrl(){
  return scm.getUserRemoteConfigs()[0].getUrl()   
 }
+
+def getUrlName(){
+ return scm.getUserRemoteConfigs()[0].getUrl().split('/')  
+}
+
