@@ -11,6 +11,11 @@ pipeline {
                 echo getUrlName()
             }
         }
+        stage("getUrlNameE"){
+            steps { 
+                echo getUrlNameE()
+            }
+        }
     }
     post { 
         cleanup {
@@ -29,3 +34,6 @@ def getUrlName(){
  return scm.getUserRemoteConfigs()[0].getUrl().tokenize("/")[-1].tokenize(".")[0] 
 }
 
+def getUrlNameE(){
+ return scm.getUserRemoteConfigs()[0].getUrl().tokenize("/")[3].split("\\.")[0] 
+}
