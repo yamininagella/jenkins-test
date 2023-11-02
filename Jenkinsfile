@@ -26,6 +26,6 @@ def getUrl(){
 }
 
 def getUrlName(){
- return scm.getUserRemoteConfigs()[0].getUrl().tokenize("/")[-1].tokenize("/")[0] 
+ return scm.getUserRemoteConfigs()[0].getUrl().tokenize("/")[-1].tokenize(".")[0] 
 }
 
