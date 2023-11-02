@@ -2,9 +2,8 @@ pipeline {
     agent any
     stages {
         stage("xyz"){
-            steps {
-                xyz = geturl()
-                echo "$xyz"
+            steps { 
+                echo geturl()
             }
         }
     }
